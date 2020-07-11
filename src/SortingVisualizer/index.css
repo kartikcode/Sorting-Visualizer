@@ -1,0 +1,14 @@
+.array-bar{
+  display: inline-block;
+  background-color: blueviolet;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 10px;
+  font-style: bold;
+  text-align: center;
+
+}
+
+.holder{
+  padding: 0 10%;
+}
