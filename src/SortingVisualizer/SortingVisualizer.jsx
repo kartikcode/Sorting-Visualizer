@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './index.css';
+import Topbar from "../Topbar/Topbar";
 
 export default class SortingVisualizer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             array: [],
-            n : null
+            n : 10,
         };
     }
 
@@ -20,13 +21,15 @@ export default class SortingVisualizer extends Component {
         for (let i = 0; i < n; i++) {
             array.push(randomIntfromInterval(20, 800));
         }
-        this.setState({array,n});
+        this.setState({array, n});
     }
 
     render() {
         const { array, n } = this.state;
         const width = 80 / n;
         return (
+            <React.Fragment>
+                <Topbar generateArray={() => this.resetArray()}></Topbar>
             <div className="holder">
                 {
                     array.map((value, idx) => (
@@ -35,7 +38,8 @@ export default class SortingVisualizer extends Component {
                     </div>
                     ))
                 }
-            </div>
+                </div>
+            </React.Fragment>
         );
 }
 }

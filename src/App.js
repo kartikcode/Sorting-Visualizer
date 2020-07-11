@@ -7,7 +7,6 @@ import Topbar from "./Topbar/Topbar";
 function App() {
   return (
     <div>
-      <Topbar></Topbar>
        <SortingVisualizer></SortingVisualizer>
     </div>
   );
