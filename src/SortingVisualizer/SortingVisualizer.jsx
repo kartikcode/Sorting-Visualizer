@@ -3,10 +3,8 @@ import './index.css';
 import Topbar from "../Topbar/Topbar";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
 import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
-import InputSlider from "../InputSlider/InputSlider";
 
 const useStyles = makeStyles({
     root: {

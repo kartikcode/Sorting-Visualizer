@@ -10,7 +10,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import InputSlider from "../InputSlider/InputSlider";
 
 const useStyles = makeStyles((theme) => ({
     root: {
