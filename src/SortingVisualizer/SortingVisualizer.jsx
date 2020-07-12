@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
+import Tooltip from '@material-ui/core/Tooltip';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
@@ -23,9 +25,11 @@ export default function SortingVisualizer(){
 
     const classes = useStyles();
     const [value, setValue] = React.useState(30);
+    const [width, setWidth] = React.useState(80 / 30);
 
     const handleSliderChange = (event, newValue) => {
         setValue(newValue);
+        setWidth(80 / value);
         resetArray();
     };
 
@@ -56,7 +60,6 @@ export default function SortingVisualizer(){
     }
 
     const { array } = state;
-        const width = 80 / value;
         return(
             <React.Fragment >
             <Topbar generateArray={() => resetArray()}></Topbar>
@@ -69,7 +72,6 @@ export default function SortingVisualizer(){
                     ))
                     }
                     </div>
-            
             <div className="range-slider">
                     <div className={classes.root}>
                         <Grid container spacing={2} alignItems="center">
@@ -84,22 +86,7 @@ export default function SortingVisualizer(){
                                 />
                             </Grid>
                             <Grid item>
-                                <Input
-                                    className={classes.input}
-                                    value={value}
-                                    margin="dense"
-                                    onChange={handleInputChange}
-                                    onBlur={handleBlur}
-                                    color="white"
-                                    background="#4CAF50"
-                                    inputProps={{
-                                        step: 10,
-                                        min: 10,
-                                        max: 100,
-                                        type: 'number',
-                                        'aria-labelledby': 'input-slider',
-                                    }}
-                                />
+                                <Typography>Adjust Array Size</Typography>
                             </Grid>
                         </Grid>
                     </div>
