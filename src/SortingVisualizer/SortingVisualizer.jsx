@@ -4,8 +4,6 @@ import Topbar from "../Topbar/Topbar";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
-import Tooltip from '@material-ui/core/Tooltip';
 import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
