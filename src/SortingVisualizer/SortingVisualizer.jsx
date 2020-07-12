@@ -67,8 +67,9 @@ export default function SortingVisualizer(){
                             {value}
                         </div>
                     ))
-                }
-            </div>
+                    }
+                    </div>
+            
             <div className="range-slider">
                     <div className={classes.root}>
                         <Grid container spacing={2} alignItems="center">
@@ -102,7 +103,7 @@ export default function SortingVisualizer(){
                             </Grid>
                         </Grid>
                     </div>
-            </div>
+                    </div>
             </React.Fragment >
         );
     };
