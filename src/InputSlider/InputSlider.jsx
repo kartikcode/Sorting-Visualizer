@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import Input from '@material-ui/core/Input';
-import VolumeUp from '@material-ui/icons/VolumeUp';
 
 const useStyles = makeStyles({
     root: {
@@ -37,18 +36,13 @@ export default function InputSlider() {
 
     return (
         <div className={classes.root}>
-            <Typography id="input-slider" gutterBottom>
-                Volume
-      </Typography>
             <Grid container spacing={2} alignItems="center">
-                <Grid item>
-                    <VolumeUp />
-                </Grid>
                 <Grid item xs>
                     <Slider
                         value={typeof value === 'number' ? value : 0}
                         onChange={handleSliderChange}
                         aria-labelledby="input-slider"
+                        color = "secondary"
                     />
                 </Grid>
                 <Grid item>
@@ -58,9 +52,11 @@ export default function InputSlider() {
                         margin="dense"
                         onChange={handleInputChange}
                         onBlur={handleBlur}
+                        color="white"
+                        background= "#4CAF50"
                         inputProps={{
                             step: 10,
-                            min: 0,
+                            min: 10,
                             max: 100,
                             type: 'number',
                             'aria-labelledby': 'input-slider',
