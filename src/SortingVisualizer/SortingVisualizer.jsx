@@ -80,6 +80,8 @@ export default function SortingVisualizer(){
                                     onChange={handleSliderChange}
                                     aria-labelledby="input-slider"
                                     color="secondary"
+                                    min={10}
+                                    max={100}
                                 />
                             </Grid>
                             <Grid item>

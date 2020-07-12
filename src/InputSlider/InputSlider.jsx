@@ -19,16 +19,18 @@ export default function InputSlider() {
     const [value, setValue] = React.useState(30);
 
     const handleSliderChange = (event, newValue) => {
+        if (newValue < 10) newValue = 10;
         setValue(newValue);
     };
 
     const handleInputChange = (event) => {
+        if (event.target.value < 10) event.target.value = 10;
         setValue(event.target.value === '' ? '' : Number(event.target.value));
     };
 
     const handleBlur = () => {
-        if (value < 0) {
-            setValue(0);
+        if (value < 10) {
+            setValue(10);
         } else if (value > 100) {
             setValue(100);
         }
@@ -41,6 +43,8 @@ export default function InputSlider() {
                     <Slider
                         value={typeof value === 'number' ? value : 0}
                         onChange={handleSliderChange}
+                        min = '10'
+                        max = '100'
                         aria-labelledby="input-slider"
                         color = "secondary"
                     />
