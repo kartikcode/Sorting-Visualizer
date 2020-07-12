@@ -105,7 +105,6 @@ export default function Topbar(props) {
                         </StyledMenuItem>
                     </StyledMenu>
                     <Typography variant="h6" className={classes.title}>
-                        <InputSlider align="right"></InputSlider>
                         </Typography>
                     <Button variant="contained" color="secondary">
                         Sort!
