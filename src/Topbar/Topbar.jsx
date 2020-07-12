@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import InputSlider from "../InputSlider/InputSlider";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,7 +66,7 @@ export default function Topbar(props) {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
+    
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -104,7 +105,6 @@ export default function Topbar(props) {
                         </StyledMenuItem>
                     </StyledMenu>
                     <Typography variant="h6" className={classes.title}>
-                        
                     </Typography>
                     <Button variant="contained" color="secondary">
                         Sort!
