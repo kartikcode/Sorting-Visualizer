@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import BubbleSort from "../SortingAlgorithms/bubbleSort";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,11 +61,12 @@ export default function Topbar(props) {
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
+        console.log(anchorEl);
     };
 
-    const handleClose = () => {
+    /*const handleClose = () => {
         setAnchorEl(null);
-    };
+    };*/
     
     return (
         <div className={classes.root}>
@@ -88,7 +90,6 @@ export default function Topbar(props) {
                         anchorEl={anchorEl}
                         keepMounted
                         open={Boolean(anchorEl)}
-                        onClose={handleClose}
                     >
                         <StyledMenuItem>
                             <ListItemText primary="Merge Sort" />
