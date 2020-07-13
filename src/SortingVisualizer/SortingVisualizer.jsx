@@ -88,7 +88,10 @@ export default function SortingVisualizer(){
                             </Grid>
                         </Grid>
                     </div>
-                    </div>
+                </div>
+                <div class="footer">
+                    <p>Follow me: <a href="https://github.com/kartikcode">kartikcode@Github</a></p>
+                </div>
             </React.Fragment >
         );
     };

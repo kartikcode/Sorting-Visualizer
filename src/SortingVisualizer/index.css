@@ -19,6 +19,17 @@ html{
   height:auto;
   width: 90%;
   padding:0% 5%;
+  overflow:hidden;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #c1c9c9;
+   color: black;
+   text-align: center;
 }
 
 .range-slider{
