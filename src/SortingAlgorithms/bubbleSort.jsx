@@ -1,5 +1,3 @@
-const { createFactory } = require("react");
-
 export default function BubbleSort(array) {
     let sorted_array = array;
     const bubbleSort = (sorted_array) => {
