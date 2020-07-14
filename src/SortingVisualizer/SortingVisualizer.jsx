@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { BubbleSort } from "../SortingAlgorithms/bubbleSort";
 
 const useStyles1 = makeStyles({
     root1: {
@@ -129,13 +130,18 @@ export default function SortingVisualizer(){
         handleClose();
     }
 
+    const { array } = state;
+
     const startSort = () => {
         if (algo === '') {
             alert('Hey there!\n This is a sorting visulaizer, so I expect you to pick a sorting algorithm of your choice !!\nHappy Coding!')
         }
+        else if (algo === "bubble") {
+            let sorted_array = BubbleSort(array);
+            setState({ sorted_array });
+        }
     }
 
-    const { array } = state;
         return(
             <React.Fragment >
                 <div className={classes.root}>
