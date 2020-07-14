@@ -81,7 +81,6 @@ export default function Topbar(props) {
         if (algo === '') {
             alert('Hey there!\n This is a sorting visulaizer, so I expect you to pick a sorting algorithm of your choice !!\nHappy Coding!')
         }
-        else
     }
 
     
