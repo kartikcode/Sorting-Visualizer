@@ -58,15 +58,31 @@ const StyledMenuItem = withStyles((theme) => ({
 export default function Topbar(props) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [algo, setAlgo] = React.useState('');
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
         console.log(anchorEl);
     };
 
-    /*const handleClose = () => {
+    const handleClose = () => {
+        console.log(algo);
         setAnchorEl(null);
-    };*/
+    };
+
+    const handleAlgo = (event) => {
+        //console.log(event.currentTarget.id);
+        setAlgo(event.currentTarget.id);
+        //console.log(algo);
+        handleClose();
+    }
+
+    const startSort = () => {
+        if (algo === '') {
+            alert('Hey there!\n This is a sorting visulaizer, so I expect you to pick a sorting algorithm of your choice !!\nHappy Coding!')
+        }
+    }
+
     
     return (
         <div className={classes.root}>
@@ -90,24 +106,25 @@ export default function Topbar(props) {
                         anchorEl={anchorEl}
                         keepMounted
                         open={Boolean(anchorEl)}
+                        onClose={handleClose}
                     >
                         <StyledMenuItem>
-                            <ListItemText primary="Merge Sort" />
+                            <ListItemText primary="Merge Sort" id="merge" onClick={handleAlgo} />
                         </StyledMenuItem>
                         <StyledMenuItem>
-                            <ListItemText primary="Bubble Sort" />
+                            <ListItemText primary="Bubble Sort" id="bubble" onClick={handleAlgo} />
                         </StyledMenuItem>
                         <StyledMenuItem>
-                            <ListItemText primary="Quick Sort" />
+                            <ListItemText primary="Quick Sort" id="quick" onClick={handleAlgo} />
                         </StyledMenuItem>
                         <StyledMenuItem>
-                            <ListItemText primary="Selection Sort" />
+                            <ListItemText primary="Selection Sort" id="selection" onClick={handleAlgo} />
                         </StyledMenuItem>
                     </StyledMenu>
                     <Typography variant="h6" className={classes.title}>
                         </Typography>
-                    <Button variant="contained" color="secondary">
-                        Sort!
+                    <Button variant="contained" color="secondary" onClick={startSort}>
+                       {algo} Sort!
                     </Button>
 
                 </Toolbar>
