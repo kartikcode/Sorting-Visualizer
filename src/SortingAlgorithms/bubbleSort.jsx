@@ -1,15 +1,24 @@
-export default function BubbleSort(array) {
-    let sorted_array = array;
-    const bubbleSort = (sorted_array) => {
-        let n = sorted_array.length;
-        for (let i = 0; i < n - 1; i++) {
-            for (let j = n - i - 1; j < n - 1; j++) {
-                if (sorted_array[i] > sorted_array[j+1]) {
-                    [sorted_array[i], sorted_array[j + 1]] = [sorted_array[j + 1], sorted_array[i]];
-                }
-            }
+export function getBubbleSortAnimations(array) {
+    const animations = [];
+    if (array.length <= 1) return array;
+    const auxiliaryArray = array.slice();
+    doBubbleSort(animations, auxiliaryArray);
+    return animations;
+  }
+  
+  export function doBubbleSort(animations, auxiliaryArray) {
+    var swapped;
+    do {
+      swapped = false;
+      for (var i = 0; i < auxiliaryArray.length - 1; i++) {
+        if (auxiliaryArray[i] > auxiliaryArray[i + 1]) {
+          var temp = auxiliaryArray[i];
+          auxiliaryArray[i] = auxiliaryArray[i + 1];
+          auxiliaryArray[i + 1] = temp;
+          animations.push([i, i + 1]);
+          swapped = true;
         }
-        return sorted_array;
-    }
-    return bubbleSort(sorted_array);
-}
+      }
+    } while (swapped);
+    return auxiliaryArray;
+  }
